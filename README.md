@@ -131,7 +131,8 @@ aws elb describe-instance-health --load-balancer-name kimberly-salazar
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.011.png)
 
-**Pero si nos saliera de la siguiente forma:**
+**Pero si nos saliera de la siguiente forma: Realizamos los siguientes pasos debajo de la imagen ya que esto se 
+debe porque no se instalo Apache.**
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.012.png)
 
@@ -158,6 +159,7 @@ aws elb describe-instance-health --load-balancer-name kimberly-salazar
 </body></html> 
 
 Para el segundo servidor, haz lo mismo excepto que use la instancia 2 y el servidor 2 para las líneas 2 y 3. En el navegador web, accede a tu balanceador de carga 4 veces (actualícelo/recárgalo 4 veces). Esto genera 4 solicitudes a tu balanceador de carga. 
+Realizamos los siguientes pasos:
 
 **ubuntu@ip-172-31-18-231:~$ sudo -s**
 
@@ -173,7 +175,9 @@ Para el segundo servidor, haz lo mismo excepto que use la instancia 2 y el servi
 
 **DNS: kimberly-salazar-1929973315.us-east-1.elb.amazonaws.com**
 
-![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.014.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.015.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.016.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.017.png)**¿Cuántas solicitudes atendió el servidor web 1?** 
+![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.014.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.015.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.016.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.017.png)
+
+**¿Cuántas solicitudes atendió el servidor web 1?** 
 
 Atendió 2 solicitudes 
 
