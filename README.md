@@ -39,8 +39,6 @@ aws elb create-load-balancer --load-balancer-name kimberly-salazar --listeners "
 
 Comunicación de Datos y Redes
 
-**Departamento Académico de Ingeniería ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.001.png)**
-
 **C8280 -Comunicación de Datos y Redes** 
 
 **¿Cuál es el DNS\_Name del balanceador de carga? ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.002.png)**
