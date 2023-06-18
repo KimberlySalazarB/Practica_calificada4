@@ -271,7 +271,7 @@ Name=LoadBalancerName,Value=tu\_nombre\_de\_usuario
 
 **aws cloudwatch get-metric-statistics --metric-name RequestCount --start-time 2023-06-15T01:23:27Z --end-time 2023-06-15T01:53:27Z --period 3600 --namespace AWS/ELB --statistics Sum --dimensions Name=LoadBalancerName,Value=kimberly-salazar**
 
-**¿Qué resultados recibió de ambos comandos?** El el primer comando se recibió las estadisticas máximas de la metrica Latency y 
+**¿Qué resultados recibió de ambos comandos?** En el primer comando se recibió las estadisticas máximas de la metrica Latency y 
 en la segunda se recibió las estadisticas de suma de la métrica RequestCount.
 
 **Primer comando:**
