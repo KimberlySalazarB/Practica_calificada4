@@ -238,6 +238,8 @@ ab -n 50 -c 5 http://nombre\_dns\_de\_tu\_balanceador\_carga/
 
 **¿Qué significan -n 50 y -c 5?**
 *-n 50 significa que se realizarán un total de 50 solicitudes al servidor web*
+
+
 *-c 5 significa que se enviarán 5 solicitudes concurrentes en cada momento*
 **¿Cuál es la salida?.** 
 
