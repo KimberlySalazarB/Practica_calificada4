@@ -372,7 +372,9 @@ aws autoscaling create-auto-scaling-group
 
 tu\_nombre\_de\_usuario-elb --availability-zones us-east-1c 
 
-**¿Cuál es la salida? ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.033.png)**
+**¿Cuál es la salida?**
+
+![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.033.png)
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.034.png)
 
