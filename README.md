@@ -193,7 +193,7 @@ aws ec2 monitor-instances
 
 --instance-ids instance1\_id instance2\_id 
 
-**¿Cuál es la salida?** Es que se esta empezando a monitoriar los servidores web.
+**¿Cuál es la salida?** Se esta empezando a monitorear los servidores web.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.018.png)
 
