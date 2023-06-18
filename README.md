@@ -18,7 +18,7 @@ Resolución de la practica_calificada4
 
 5\. Cualquier evidencia de copia elimina el examen se informará de la situación a la coordinación. 
 
-**Amazon ELB** 
+# **Amazon ELB** 
 
 Aquí, usamos Amazon Elastic Load Balancing (ELB) y Amazon Cloud Watch a través de la CLI de AWS para equilibrar la carga de un servidor web. 
 
@@ -306,7 +306,7 @@ Finalmente, finaliza las instancias del servidor web de tus instancias y tu inst
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.029.png)
 
-**Auto Scaling** 
+# **Auto Scaling** 
 
 Usamos AWS CLI para configurar sus instancias EC2 para el escalado automático. **Parte 1: escalar hacia arriba** 
 
