@@ -40,7 +40,7 @@ aws elb create-load-balancer --load-balancer-name kimberly-salazar --listeners "
 
 
 
-**¿Cuál es el DNS\_Name del balanceador de carga?**
+**¿Cuál es el DNS\_Name del balanceador de carga?** Es el siguiente:
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.002.png)
 
@@ -93,11 +93,11 @@ aws ec2 run-instances --image-id ami-d9a98cb0 --count 2
 
 **--user-data file://./apache-install** --placement AvailabilityZone=us-east-1d 
 
-**¿Cuál es el ID de instancia de la primera instancia?**  i-08623a7a651fa1bb7
+**¿Cuál es el ID de instancia de la primera instancia?**  El ID de la primera instancia es i-08623a7a651fa1bb7.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.007.png)
 
-**¿Cuál es el ID de instancia de la segunda instancia?** i-0f55925035f9c56c6
+**¿Cuál es el ID de instancia de la segunda instancia?** El ID de la segunda instancia esi-0f55925035f9c56c6
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.008.png)
 
@@ -111,7 +111,7 @@ aws elb register-instances-with-load-balancer
 
 aws elb register-instances-with-load-balancer --load-balancer-name kimberly-salazar --instances i-0c0a95df6a3426dd0 i-02ebbc93d652d84fb
 
-**¿Cuál es la salida?  La salida muestra que ya se registraron las instancias con un balanceador de carga en AWS.**
+**¿Cuál es la salida?  La salida muestra que ya se registraron exitosamente las instancias con el balanceador de carga.**
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.009.png)
 
@@ -123,7 +123,7 @@ aws elb describe-instance-health
 
 aws elb describe-instance-health --load-balancer-name kimberly-salazar
 
-**¿Cuál es la salida?** 
+**¿Cuál es la salida?** La salida es el estado de la instancia  de los servidores con una carga equilibrada.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.010.png)
 
@@ -193,7 +193,7 @@ aws ec2 monitor-instances
 
 --instance-ids instance1\_id instance2\_id 
 
-**¿Cuál es la salida?**
+**¿Cuál es la salida?** Es que se esta empezando a monitoriar los servidores web.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.018.png)
 
@@ -224,27 +224,28 @@ your\_end\_time --period 3600 --namespace AWS/EC2
 
 **aws cloudwatch get-metric-statistics --metric-name CPUUtilization --start-time 2023-06-15T01:23:27Z --end-time 2023-06-15T01:53:27Z --period 3600 --namespace AWS/EC2 --statistics Maximum --dimensions Name=InstanceId,Value=i-0f55925035f9c56c6** 
 
-**¿Cuál es la salida?** 
+**¿Cuál es la salida?** Se obtiene las estadisticas de la metrica CPUUtilization
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.021.png)
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.022.png)
 
-9\. Apache tiene un herramienta benchmark llamada ab. Si desea ver más información sobre ab, consulte http://httpd.apache.org/docs/2.0/programs/ab.html. Para ejecutar ab, emita el siguiente comando en tu sistema de trabajo. 
+**9\. Apache tiene un herramienta benchmark llamada ab. Si desea ver más información sobre ab, consulte http://httpd.apache.org/docs/2.0/programs/ab.html. Para ejecutar ab, emita el siguiente comando en tu sistema de trabajo.**
 
 ab -n 50 -c 5 http://nombre\_dns\_de\_tu\_balanceador\_carga/ 
 
 **ab -n 50 -c 5 http://kimberly-salazar-1929973315.us-east-1.elb.amazonaws.com/** 
 
-**¿Qué significan -n 50 y -c 5? ¿Cuál es la salida?.** 
+**¿Qué significan -n 50 y -c 5?**
+*-n 50 significa que se realizarán un total de 50 solicitudes al servidor web*
+*-c 5 significa que se enviarán 5 solicitudes concurrentes en cada momento*
+**¿Cuál es la salida?.** 
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.023.png)
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.024.png)
 
-**•	-n indica el número total de solicitudes que se enviarán al servidor web. En el ejemplo proporcionado -n 50, se realizaron un total de 50 solicitudes al servidor web.**
 
-**•	-c representa el número de solicitudes concurrentes que se enviarán al servidor web al mismo tiempo. En el ejemplo -c 5, se enviarán 5 solicitudes concurrentes en cada momento.**
 
 **10. Ahora queremos examinar la métrica de latencia del ELB. Utiliza el siguiente comando con las mismas horas de inicio y finalización que especificó en el paso 8.** 
 
@@ -268,7 +269,8 @@ Name=LoadBalancerName,Value=tu\_nombre\_de\_usuario
 
 **aws cloudwatch get-metric-statistics --metric-name RequestCount --start-time 2023-06-15T01:23:27Z --end-time 2023-06-15T01:53:27Z --period 3600 --namespace AWS/ELB --statistics Sum --dimensions Name=LoadBalancerName,Value=kimberly-salazar**
 
-**¿Qué resultados recibió de ambos comandos?** 
+**¿Qué resultados recibió de ambos comandos?** El el primer comando se recibió las estadisticas máximas de la metrica Latency y 
+en la segunda se recibió las estadisticas de suma de la métrica RequestCount.
 
 **Primer comando:**
 
@@ -290,7 +292,7 @@ Name=LoadBalancerName,Value=tu\_nombre\_de\_usuario
 
 **aws elb deregister-instances-from-load-balancer --load-balancer-name kimberly-salazar --instances i-08623a7a651fa1bb7  i-0f55925035f9c56c6**
 
-**¿Cuál es la salida?** 
+**¿Cuál es la salida?**  Se eliminan las intancias del balanceador de carga.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.027.png)
 
@@ -308,7 +310,7 @@ Finalmente, finaliza las instancias del servidor web de tus instancias y tu inst
 
 **[cloudshell-user@ip-10-6-95-182 ~]$ aws ec2 terminate-instances --instance-ids i-08623a7a651fa1bb7 i-0f55925035f9c56c6**
 
-` `**¿Cuál es la salida?** 
+` `**¿Cuál es la salida?** Se finalizaron las instancias del servidor web y las instancias EC2.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.029.png)
 
@@ -326,7 +328,7 @@ Usamos AWS CLI para configurar sus instancias EC2 para el escalado automático. 
 
 *tu\_nombre\_usuario* --user-data file://./apache-install 
 
-**¿Cuál es la salida?** 
+**¿Cuál es la salida?**  Se creo una configuracion en AutoScaling.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.030.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.031.png)
 
@@ -353,7 +355,7 @@ InstanceProtocol=HTTP,InstancePort=80"
 
 – availability-zones us-east-1c 
 
-¿Cuál es la salida? 
+**¿Cuál es la salida?** Se creo un balanceador de carga.
 
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.032.png)
@@ -372,7 +374,7 @@ aws autoscaling create-auto-scaling-group
 
 tu\_nombre\_de\_usuario-elb --availability-zones us-east-1c 
 
-**¿Cuál es la salida?**
+**¿Cuál es la salida?** Se creo un grupo de escalamiento automático.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.033.png)
 
@@ -395,7 +397,8 @@ aws autoscaling describe-auto-scaling-groups
 
 --auto-scaling-group-name tu\_nombre\_de\_usuario-asg 
 
-¿Cuál es la salida? Deberías ver que se crea una nueva instancia EC2. Si no lo ves, espera 2 minutos y vuelve a ejecutar el comando. 
+**¿Cuál es la salida?** Información detallada de grupo de escalado automatico donde se puede visualizar una instancia.
+Deberías ver que se crea una nueva instancia EC2. Si no lo ves, espera 2 minutos y vuelve a ejecutar el comando. 
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.037.png)
 
@@ -407,7 +410,7 @@ aws autoscaling describe-auto-scaling-groups
 
 i-0407fd2c4e8f0b7a9
 
-4\**. Ahora creamos una política de escalado hacía arriba seguida de una alarma de CloudWatch para determinar, en caso de que lapolítica sea cierta, que AWS necesita ampliar nuestros recursos. Escribe los dos comandos que siguen. AnotA el valor de PolicyARN del primer comando.** 
+**4\**. Ahora creamos una política de escalado hacía arriba seguida de una alarma de CloudWatch para determinar, en caso de que lapolítica sea cierta, que AWS necesita ampliar nuestros recursos. Escribe los dos comandos que siguen. AnotA el valor de PolicyARN del primer comando.** 
 
 aws autoscaling put-scaling-policy 
 
@@ -437,7 +440,8 @@ tu\_nombre\_de\_usuario-asg" --evaluation-periods 1
 
 "PolicyARN": "arn:aws:autoscaling:us-east-1:091101640480:scalingPolicy:885a9e7f-b954-48dc-9a71-af49368326dd:autoScalingGroupName/kimberly-salazar-asg:policyName/kimberly-salazar-scaleup"
 
-**¿Cuál es la salida de ambos comandos?** 
+**¿Cuál es la salida de ambos comandos?**  El el primer comando se obtiene la politica de escalado y en la segunda se crea una alarma que se 
+activara cuando la utilización del CPU supere el umbral de 70%.
 
 Primer comando:
 
@@ -457,7 +461,7 @@ aws cloudwatch describe-alarms --alarm-names
 
 tu\_nombre\_de\_usuario-highcpualarm 
 
-**¿Cuál es la salida?** 
+**¿Cuál es la salida?** La descripción de la alarma creada.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.042.png)
 
@@ -480,6 +484,7 @@ Inicia un nuevo terminal. Repite el siguiente comando cada 2 minutos hasta que v
 aws autoscaling describe-auto-scaling-groups 
 
 --auto-scaling-group-name tu\_nombre\_de\_usuario -asg 
+¿Cuál es la salida? Es la descripción del grupo de autoscaling donde se visualiza las 3 tres instancias.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.046.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.047.png)
 
@@ -530,7 +535,8 @@ tu\_nombre\_de\_usuario-lowcpualarm
 
 value\_of\_PolicyARN 
 
-**¿Cuáles son las salidas?** 
+**¿Cuáles son las salidas?** En el primer comando se visualiza la politica creada de escalado que disminuira en menos una instancia y el segundo
+comando se visualiza la alarma creada que se activara cuando la utilización del CPU es superior al umbral 30%.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.049.png)
 
@@ -548,7 +554,7 @@ aws autoscaling describe-auto-scaling-groups
 
 --auto-scaling-group-name tu\_nombre\_de\_usuario-asg 
 
-**¿Cuál es la salida?** 
+**¿Cuál es la salida?** Se obtine la descripcion de los grupos de AutoScaling.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.052.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.053.png)
 
@@ -573,7 +579,7 @@ aws cloudwatch delete-alarms --alarm-name
 
 tu\_nombre\_de\_usuario-lowcpualarm 
 
-**¿Cuál es la salida?** 
+**¿Cuál es la salida?** Se eliminan las alarmas y el grupo de AutoScaling.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.055.png)
 
@@ -585,7 +591,7 @@ aws cloudwatch delete-alarms --alarm-name
 
 tu\_nombre\_de\_usuario-highcpualarm 
 
-**¿Cuál es la salida?** 
+**¿Cuál es la salida?** Se elimina la alarma.
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.058.png)
 
@@ -597,7 +603,7 @@ aws autoescaling delete-launch-configuration
 
 **[cloudshell-user@ip-10-6-39-175 ~]$ aws autoscaling delete-launch-configuration --launch-configuration-name kimberly-salazar-lc** 
 
-**¿Cuál es la salida?** 
+**¿Cuál es la salida?** Se elimina la configuración de lanzamiento
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.059.png)
 
