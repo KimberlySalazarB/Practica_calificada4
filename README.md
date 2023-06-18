@@ -1,6 +1,8 @@
 # Practica_calificada4
 Resolución de la practica_calificada4
-**Departamento Académico de Ingeniería ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.001.png)**
+**Departamento Académico de Ingeniería** 
+
+![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.001.png)
 
 **C8280 -Comunicación de Datos y Redes** 
 
@@ -41,8 +43,8 @@ Comunicación de Datos y Redes
 
 **C8280 -Comunicación de Datos y Redes** 
 
-**¿Cuál es el DNS\_Name del balanceador de carga?
-![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.002.png)**
+**¿Cuál es el DNS\_Name del balanceador de carga?**
+![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.002.png)
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.003.png)
 
