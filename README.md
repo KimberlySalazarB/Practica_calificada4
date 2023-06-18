@@ -75,7 +75,7 @@ aws ec2 run-instances --image-id ami-d9a98cb0 --count 2 --instance-type t1.micro
 
 **¿Qué parte de este comando indica que deseas dos instancias EC2?** 
 
-aws ec2 run-instances --image-id ami-d9a98cb0 --count 2 
+aws ec2 run-instances --image-id ami-d9a98cb0 **--count 2**
 
 --instance-type t1.micro --key-name tu\_nombre\_de\_usuario-key 
 
@@ -91,7 +91,7 @@ aws ec2 run-instances --image-id ami-d9a98cb0 --count 2
 
 --security-groups tu\_nombre\_de\_usuario 
 
---user-data file://./apache-install --placement AvailabilityZone=us-east-1d 
+**--user-data file://./apache-install** --placement AvailabilityZone=us-east-1d 
 
 **¿Cuál es el ID de instancia de la primera instancia?**  i-08623a7a651fa1bb7
 
