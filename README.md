@@ -353,7 +353,10 @@ InstanceProtocol=HTTP,InstancePort=80"
 
 – availability-zones us-east-1c 
 
-¿Cuál es la salida? ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.032.png)
+¿Cuál es la salida? 
+
+
+![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.032.png)
 
 
 
