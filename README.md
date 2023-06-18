@@ -41,11 +41,11 @@ Comunicación de Datos y Redes
 
 **C8280 -Comunicación de Datos y Redes** 
 
-**¿Cuál es el DNS\_Name del balanceador de carga? ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.002.png)**
+**¿Cuál es el DNS\_Name del balanceador de carga?
+![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.002.png)**
 
 ![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.003.png)
 
-![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.003.png)
 
 **2. El comando describe-load-balancers describe el estado y las propiedades de tu(s) balanceador(es) de carga. Presenta este comando.** 
 
@@ -57,7 +57,9 @@ aws elb describe-load-balancers
 
 **¿Cuál es la salida?** La salida es la descripción del estado y propiedades del balanceador de carga creado. Esta información puede incluir detalles como el nombre del balanceador de carga, los grupos de seguridad asociados, las instancias de EC2.etc.
 
-![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.004.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.005.png)![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.006.png)
+![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.004.png)
+![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.005.png)
+![](Aspose.Words.183a722b-c0af-4236-be81-5f35a62d73a9.006.png)
 
 **3. Creamos dos instancias EC2, cada una ejecutando un servidor web Apache. Emite lo siguiente.** 
 
